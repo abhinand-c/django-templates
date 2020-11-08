@@ -120,5 +120,6 @@ AUTH_USER_MODEL = 'core.User'
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = "file_root/static"
-MEDIA_ROOT = "file_root/media"
+PUBLIC_ROOT = Path(config('PUBLIC_ROOT', default="file_root"))
+STATIC_ROOT = PUBLIC_ROOT / "static"
+MEDIA_ROOT = PUBLIC_ROOT / "media"
